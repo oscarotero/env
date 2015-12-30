@@ -21,7 +21,7 @@ class Env
     /**
      * Returns an environment variable.
      * 
-     * @param string   $name
+     * @param string $name
      */
     public static function get($name)
     {
@@ -71,7 +71,7 @@ class Env
     }
 
     /**
-     * Strip quotes
+     * Strip quotes.
      *
      * @param string $value
      *
