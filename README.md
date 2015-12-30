@@ -22,12 +22,12 @@ var_dump(Env::get('FOO')); //bool(false)
 
 ## Available conversions:
 
-* Strings with "false" to boolean `false`
-* Strings with "true" to boolean `true`
-* Strings with "null" will be converted to `null`
-* Strings with only numbers will be converted to integers
+* Strings with "false" are converted to boolean `false`
+* Strings with "true" are converted to boolean `true`
+* Strings with "null" are converted to `null`
+* Strings with only numbers are converted to integers
 
-To configure the conversions, there's the following constants:
+To configure the conversions, there's the following constants (all enabled by default):
 
 * `Env::CONVERT_BOOL` To convert boolean values
 * `Env::CONVERT_NULL` To convert null values
@@ -35,7 +35,7 @@ To configure the conversions, there's the following constants:
 * `Env::STRIP_QUOTES` To remove the quotes of the strings
 
 ```php
-//Convert booleans and null, but not integers neither quotes
+//Convert booleans and null, but not integers or strip quotes
 Env::$options = Env::CONVERT_BOOL | Env::CONVERT_NULL;
 ```
 

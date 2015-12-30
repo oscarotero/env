@@ -22,9 +22,8 @@ class Env
      * Returns an environment variable.
      * 
      * @param string   $name
-     * @param int|null $options
      */
-    public static function get($name, $options = null)
+    public static function get($name)
     {
         $value = getenv($name);
 
@@ -32,7 +31,7 @@ class Env
             return self::$default;
         }
 
-        return self::convert($value, $options);
+        return self::convert($value);
     }
 
     /**

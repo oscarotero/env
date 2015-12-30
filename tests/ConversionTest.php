@@ -4,21 +4,21 @@ class ConversionTest extends PHPUnit_Framework_TestCase
 {
     public function dataProvider()
     {
-        return [
-            ['false', null, false],
-            ['FALSE', null, false],
-            ['true', null, true],
-            ['True', null, true],
-            ['NULL', null, null],
-            ['null', null, null],
-            ['123', null, 123],
-            ['123.4', null, '123.4'],
-            ['"hello"', null, 'hello'],
-            ["'hello'", null, 'hello'],
-            ['false', 0, 'false'],
-            ['FALSE', Env::CONVERT_INT, 'FALSE'],
-            ['23', Env::CONVERT_INT, 23],
-        ];
+        return array(
+            array('false', null, false),
+            array('FALSE', null, false),
+            array('true', null, true),
+            array('True', null, true),
+            array('NULL', null, null),
+            array('null', null, null),
+            array('123', null, 123),
+            array('123.4', null, '123.4'),
+            array('"hello"', null, 'hello'),
+            array("'hello'", null, 'hello'),
+            array('false', 0, 'false'),
+            array('FALSE', Env::CONVERT_INT, 'FALSE'),
+            array('23', Env::CONVERT_INT, 23),
+        );
     }
 
     /**
