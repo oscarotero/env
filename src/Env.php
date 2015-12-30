@@ -64,9 +64,26 @@ class Env
         }
 
         if ($options & self::STRIP_QUOTES) {
-            if (($value[0] === '"' && substr($value, -1) === '"') || ($value[0] === "'" && substr($value, -1) === "'")) {
-                return substr($value, 1, -1);
-            }
+            return self::stripQuotes($value);
+        }
+
+        return $value;
+    }
+
+    /**
+     * Strip quotes
+     *
+     * @param string $value
+     *
+     * @return string
+     */
+    private static function stripQuotes($value)
+    {
+        if (
+            ($value[0] === '"' && substr($value, -1) === '"')
+         || ($value[0] === "'" && substr($value, -1) === "'")
+        ) {
+            return substr($value, 1, -1);
         }
 
         return $value;
