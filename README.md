@@ -1,5 +1,7 @@
 # env
 
+[![Build Status](https://travis-ci.org/oscarotero/psr7-middlewares.svg)](https://travis-ci.org/oscarotero/psr7-middlewares)
+
 Simple library to read environment variables and convert to simple types.
 
 ## Installation

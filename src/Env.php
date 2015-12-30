@@ -15,7 +15,7 @@ class Env
      */
     public static function init()
     {
-        include_once __DIR__.'/env_function.php';
+        include_once dirname(__FILE__).'/env_function.php';
     }
 
     /**
