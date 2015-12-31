@@ -5,6 +5,7 @@ class ConversionTest extends PHPUnit_Framework_TestCase
     public function dataProvider()
     {
         return array(
+            array('', null, ''),
             array('false', null, false),
             array('FALSE', null, false),
             array('true', null, true),

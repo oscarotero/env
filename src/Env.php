@@ -63,7 +63,7 @@ class Env
             return (int) $value;
         }
 
-        if ($options & self::STRIP_QUOTES) {
+        if (($options & self::STRIP_QUOTES) && !empty($value)) {
             return self::stripQuotes($value);
         }
 
