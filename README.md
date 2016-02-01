@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/oscarotero/psr7-middlewares.svg)](https://travis-ci.org/oscarotero/psr7-middlewares)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/env/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/oscarotero/env/?branch=master)
 
-Simple library to read environment variables and convert to simple types.
+Simple library to get environment variables converted to simple types.
 
 ## Installation
 
@@ -25,12 +25,13 @@ var_dump(Env::get('FOO')); //bool(false)
 
 ## Available conversions:
 
-* Strings with "false" are converted to boolean `false`
-* Strings with "true" are converted to boolean `true`
-* Strings with "null" are converted to `null`
-* Strings with only numbers are converted to integers
+* "false" is converted to boolean `false`
+* "true" is converted to boolean `true`
+* "null" is converted to `null`
+* If the string contains only numbers is converted to an integer
+* If the string has quotes, remove them
 
-To configure the conversions, there's the following constants (all enabled by default):
+To configure the conversion, you can use the following constants (all enabled by default):
 
 * `Env::CONVERT_BOOL` To convert boolean values
 * `Env::CONVERT_NULL` To convert null values
@@ -50,14 +51,14 @@ By default, if the value does not exits, returns `null`, but you can change for 
 Env::$default = false;
 ```
 
-## Global function
+## The env() function
 
-To avoid to handle with classes and namespaces, you can use the global function, like Laravel or other libraries:
+If you don't want to complicate with classes and namespaces, you can use the `env()` function, like in Laravel or other libraries:
 
 ```php
-Env::init();
+Env::init(); //expose the function to globals
 
-//now we can use the env() function
+//now you can use it
 
 var_dump(env('FOO'));
 ```
