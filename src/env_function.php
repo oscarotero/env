@@ -7,7 +7,9 @@
  *
  * @return mixed
  */
-function env($name)
-{
-    return Env::get($name);
+if (!function_exists('env')) {
+    function env($name)
+    {
+        return Env::get($name);
+    }
 }
