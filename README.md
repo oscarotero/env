@@ -10,7 +10,7 @@ Simple library to get environment variables converted to simple types.
 This package is installable and autoloadable via Composer as [oscarotero/env](https://packagist.org/packages/oscarotero/env).
 
 ```
-$ composer require oscarotero/env
+$ composer require deinternetjongens/env
 ```
 
 ## Example
