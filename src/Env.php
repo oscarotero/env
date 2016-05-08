@@ -12,10 +12,19 @@ class Env
 
     /**
      * Include the global env() function.
+     * Returns whether the function has been registered or not
+     * 
+     * @return bool
      */
     public static function init()
     {
+        if (function_exists('env')) {
+            return false;
+        }
+
         include_once dirname(__FILE__).'/env_function.php';
+
+        return true;
     }
 
     /**
