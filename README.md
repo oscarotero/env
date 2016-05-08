@@ -1,6 +1,6 @@
 # env
 
-[![Build Status](https://travis-ci.org/oscarotero/psr7-middlewares.svg)](https://travis-ci.org/oscarotero/psr7-middlewares)
+[![Build Status](https://travis-ci.org/oscarotero/env.svg)](https://travis-ci.org/oscarotero/env)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oscarotero/env/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/oscarotero/env/?branch=master)
 
 Simple library to get environment variables converted to simple types.
