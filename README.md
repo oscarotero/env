@@ -45,7 +45,7 @@ Env::$options = Env::CONVERT_BOOL | Env::CONVERT_NULL;
 
 ## Default value
 
-By default, if the value does not exits, returns `null`, but you can change for any other value:
+By default, if the value does not exist, returns `null`, but you can change for any other value:
 
 ```php
 Env::$default = false;
