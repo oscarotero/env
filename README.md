@@ -45,6 +45,12 @@ There's also additional settings that you can enable (they're disabled by defaul
 ```php
 //Convert booleans and null, but not integers or strip quotes
 Env::$options = Env::CONVERT_BOOL | Env::CONVERT_NULL;
+
+//Add one more option to get the values from $_ENV
+Env::$options |= Env::USE_ENV_ARRAY;
+
+//Remove only an option from the current configuration
+Env::$options ^= Env::CONVERT_NULL;
 ```
 
 ## Default value
