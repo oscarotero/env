@@ -41,5 +41,19 @@ class ConversionTest extends PHPUnit_Framework_TestCase
         $this->assertSame(123, env('FOO'));
 
         $this->assertFalse(Env::init());
+
+        //Switch to $_ENV
+        Env::$options |= Env::USE_ENV_ARRAY;
+
+        $this->assertNull(env('FOO'));
+
+        $_ENV['FOO'] = 456;
+
+        $this->assertSame(456, env('FOO'));
+        
+        //Switch to getenv again
+        Env::$options ^= Env::USE_ENV_ARRAY;
+
+        $this->assertSame(123, env('FOO'));
     }
 }
