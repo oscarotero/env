@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 * Fixed error on strip quotes to empty strings
 
-## [1.0.0] - 2015-12-30
+## 1.0.0 - 2015-12-30
 
 First stable version
 
