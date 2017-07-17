@@ -31,12 +31,13 @@ var_dump(Env::get('FOO')); //bool(false)
 * If the string contains only numbers is converted to an integer
 * If the string has quotes, remove them
 
-To configure the conversion, you can use the following constants (all enabled by default):
+To configure the library, you can use the following constants (all enabled by default):
 
 * `Env::CONVERT_BOOL` To convert boolean values
 * `Env::CONVERT_NULL` To convert null values
 * `Env::CONVERT_INT` To convert integer values
 * `Env::STRIP_QUOTES` To remove the quotes of the strings
+* `Env::USE_ENV_ARRAY` To get the values from `$_ENV`, instead `getenv()` (false by default).
 
 ```php
 //Convert booleans and null, but not integers or strip quotes
