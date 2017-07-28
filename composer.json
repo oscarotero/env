@@ -18,7 +18,8 @@
         "issues": "https://github.com/oscarotero/env/issues"
     },
     "require": {
-        "php": ">=5.2"
+        "php": ">=5.2",
+        "ext-ctype": "*"
     },
     "autoload": {
         "psr-0": {
