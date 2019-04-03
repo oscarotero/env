@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - New constant `Env::LOCAL_FIRST` to get first the values of locally-set environment variables [#6].
 
+### Fixed
+- Added requirement for ctype extension in composer.json [#4].
+
 ## [1.1.0] - 2017-07-17
 ### Added
 - New constant `Env::USE_ENV_ARRAY` to get the values using `$_ENV` array instead `getenv()` [#3].
@@ -29,6 +32,7 @@ First stable version
 
 [#1]: https://github.com/oscarotero/env/issues/1
 [#3]: https://github.com/oscarotero/env/issues/3
+[#4]: https://github.com/oscarotero/env/issues/4
 [#6]: https://github.com/oscarotero/env/issues/6
 
 [1.2.0]: https://github.com/oscarotero/env/compare/v1.1.0...v1.2.0
