@@ -37,7 +37,7 @@ class Env
     {
         if (self::$options & self::USE_ENV_ARRAY) {
             $value = isset($_ENV[$name]) ? $_ENV[$name] : false;
-        } else {
+        } elseif(($value = getenv($name, true)) === false) {
             $value = getenv($name);
         }
 
