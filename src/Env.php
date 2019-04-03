@@ -39,7 +39,11 @@ class Env
         if (self::$options & self::USE_ENV_ARRAY) {
             $value = isset($_ENV[$name]) ? $_ENV[$name] : false;
         } elseif (self::$options & self::LOCAL_FIRST) {
-            $value = getenv($name, true) ?: getenv($name);
+            $value = getenv($name, true);
+
+            if ($value === false) {
+                $value = getenv($name);
+            }
         } else {
             $value = getenv($name);
         }
