@@ -46,6 +46,7 @@ To configure the conversion, you can use the following constants (all enabled by
 There's also additional settings that you can enable (they're disabled by default)
 
 * `Env::USE_ENV_ARRAY` To get the values from `$_ENV`, instead `getenv()`.
+* `Env::LOCAL_FIRST` To get first the values of locally-set environment variables`.
 
 ```php
 //Convert booleans and null, but not integers or strip quotes

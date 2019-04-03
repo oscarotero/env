@@ -7,6 +7,7 @@ class Env
     const CONVERT_INT = 4;
     const STRIP_QUOTES = 8;
     const USE_ENV_ARRAY = 16;
+    const LOCAL_FIRST = 32;
 
     public static $options = 15;   //All flags enabled
     public static $default = null; //Default value if not exists
@@ -37,7 +38,9 @@ class Env
     {
         if (self::$options & self::USE_ENV_ARRAY) {
             $value = isset($_ENV[$name]) ? $_ENV[$name] : false;
-        } elseif(($value = getenv($name, true)) === false) {
+        } elseif ((self::$options & self::LOCAL_FIRST) && ($value = getenv($name, true)) !== false) {
+    	
+        } else {
             $value = getenv($name);
         }
 
