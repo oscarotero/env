@@ -1,5 +1,7 @@
 <?php
 
+namespace Env;
+
 class Env
 {
     const CONVERT_BOOL = 1;
@@ -11,23 +13,6 @@ class Env
 
     public static $options = 15;   //All flags enabled
     public static $default = null; //Default value if not exists
-
-    /**
-     * Include the global env() function.
-     * Returns whether the function has been registered or not.
-     * 
-     * @return bool
-     */
-    public static function init()
-    {
-        if (function_exists('env')) {
-            return false;
-        }
-
-        include_once dirname(__FILE__).'/env_function.php';
-
-        return true;
-    }
 
     /**
      * Returns an environment variable.

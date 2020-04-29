@@ -23,7 +23,7 @@ $ composer require oscarotero/env
 var_dump(getenv('FOO')); //string(5) "false"
 
 // Using Env:
-var_dump(Env::get('FOO')); //bool(false)
+var_dump(\Env\Env::get('FOO')); //bool(false)
 ```
 
 ## Available conversions
@@ -49,6 +49,8 @@ There's also additional settings that you can enable (they're disabled by defaul
 * `Env::LOCAL_FIRST` To get first the values of locally-set environment variables.
 
 ```php
+use Env\Env;
+
 //Convert booleans and null, but not integers or strip quotes
 Env::$options = Env::CONVERT_BOOL | Env::CONVERT_NULL;
 
@@ -64,7 +66,7 @@ Env::$options ^= Env::CONVERT_NULL;
 By default, if the value does not exist, returns `null`, but you can change for any other value:
 
 ```php
-Env::$default = false;
+\Env\Env::$default = false;
 ```
 
 ## The env() function
@@ -72,11 +74,7 @@ Env::$default = false;
 If you don't want to complicate with classes and namespaces, you can use the `env()` function, like in Laravel or other libraries:
 
 ```php
-Env::init(); //expose the function to globals
-
-//now you can use it
-
-var_dump(env('FOO'));
+var_dump(\Env\env('FOO'));
 ```
 
 ---
