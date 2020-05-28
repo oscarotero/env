@@ -1,8 +1,7 @@
 <?php
 
-if (!class_exists('PHPUnit_Framework_TestCase')) {
-    class_alias('PHPUnit\\Framework\\TestCase', 'PHPUnit_Framework_TestCase');
-}
+use Env\Env;
+use function Env\env;
 
 class ConversionTest extends PHPUnit_Framework_TestCase
 {
@@ -38,13 +37,9 @@ class ConversionTest extends PHPUnit_Framework_TestCase
 
     public function testEnv()
     {
-        $this->assertTrue(Env::init());
-
         putenv('FOO=123');
 
         $this->assertSame(123, env('FOO'));
-
-        $this->assertFalse(Env::init());
 
         //Switch to $_ENV
         Env::$options |= Env::USE_ENV_ARRAY;
@@ -54,10 +49,31 @@ class ConversionTest extends PHPUnit_Framework_TestCase
         $_ENV['FOO'] = 456;
 
         $this->assertSame(456, env('FOO'));
-        
+
         //Switch to getenv again
         Env::$options ^= Env::USE_ENV_ARRAY;
 
         $this->assertSame(123, env('FOO'));
+    }
+
+    public function testEnvGet()
+    {
+        putenv('FOO=123');
+
+        $this->assertSame(123, Env::get('FOO'));
+
+        //Switch to $_ENV
+        Env::$options |= Env::USE_ENV_ARRAY;
+
+        $this->assertNull(Env::get('FOO'));
+
+        $_ENV['FOO'] = 456;
+
+        $this->assertSame(456, Env::get('FOO'));
+        
+        //Switch to getenv again
+        Env::$options ^= Env::USE_ENV_ARRAY;
+
+        $this->assertSame(123, Env::get('FOO'));
     }
 }
