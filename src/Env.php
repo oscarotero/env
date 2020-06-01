@@ -16,10 +16,8 @@ class Env
 
     /**
      * Returns an environment variable.
-     * 
-     * @param string $name
      */
-    public static function get($name)
+    public static function get(string $name)
     {
         if (self::$options & self::USE_ENV_ARRAY) {
             $value = isset($_ENV[$name]) ? $_ENV[$name] : false;
@@ -42,13 +40,10 @@ class Env
 
     /**
      * Converts the type of values like "true", "false", "null" or "123".
-     *
-     * @param string   $value
-     * @param int|null $options
-     *
+     * 
      * @return mixed
      */
-    public static function convert($value, $options = null)
+    public static function convert(string $value, int $options = null)
     {
         if ($options === null) {
             $options = self::$options;
@@ -78,12 +73,8 @@ class Env
 
     /**
      * Strip quotes.
-     *
-     * @param string $value
-     *
-     * @return string
      */
-    private static function stripQuotes($value)
+    private static function stripQuotes(string $value): string
     {
         if (
             ($value[0] === '"' && substr($value, -1) === '"')

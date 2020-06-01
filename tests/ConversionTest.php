@@ -5,7 +5,7 @@ use function Env\env;
 
 class ConversionTest extends PHPUnit_Framework_TestCase
 {
-    public function dataProvider()
+    public function dataProvider(): array
     {
         return array(
             array('', null, ''),
@@ -28,7 +28,7 @@ class ConversionTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider dataProvider
      */
-    public function testConversions($value, $options, $expected)
+    public function testConversions(string $value, ?int $options, $expected)
     {
         $result = Env::convert($value, $options);
 

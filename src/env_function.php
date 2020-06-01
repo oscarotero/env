@@ -5,11 +5,9 @@ namespace Env;
 /**
  * Gets the value of an environment variable.
  *
- * @param string $name The value name
- *
  * @return mixed
  */
-function env($name)
+function env(string $name)
 {
     return Env::get($name);
 }
