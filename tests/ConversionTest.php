@@ -2,8 +2,9 @@
 
 use Env\Env;
 use function Env\env;
+use PHPUnit\Framework\TestCase;
 
-class ConversionTest extends PHPUnit_Framework_TestCase
+class ConversionTest extends TestCase
 {
     public function dataProvider(): array
     {
@@ -35,7 +36,7 @@ class ConversionTest extends PHPUnit_Framework_TestCase
         $this->assertSame($expected, $result);
     }
 
-    public function testEnv()
+    public function testFunction()
     {
         putenv('FOO=123');
 
@@ -56,24 +57,24 @@ class ConversionTest extends PHPUnit_Framework_TestCase
         $this->assertSame(123, env('FOO'));
     }
 
-    public function testEnvGet()
+    public function testClass()
     {
-        putenv('FOO=123');
+        putenv('BAR=123');
 
-        $this->assertSame(123, Env::get('FOO'));
+        $this->assertSame(123, Env::get('BAR'));
 
         //Switch to $_ENV
         Env::$options |= Env::USE_ENV_ARRAY;
 
-        $this->assertNull(Env::get('FOO'));
+        $this->assertNull(Env::get('BAR'));
 
-        $_ENV['FOO'] = 456;
+        $_ENV['BAR'] = 456;
 
-        $this->assertSame(456, Env::get('FOO'));
+        $this->assertSame(456, Env::get('BAR'));
         
         //Switch to getenv again
         Env::$options ^= Env::USE_ENV_ARRAY;
 
-        $this->assertSame(123, Env::get('FOO'));
+        $this->assertSame(123, Env::get('BAR'));
     }
 }
