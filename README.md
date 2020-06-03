@@ -19,11 +19,13 @@ $ composer require oscarotero/env
 ## Example
 
 ```php
+use Env\Env;
+
 // Using getenv function:
 var_dump(getenv('FOO')); //string(5) "false"
 
 // Using Env:
-var_dump(\Env\Env::get('FOO')); //bool(false)
+var_dump(Env::get('FOO')); //bool(false)
 ```
 
 ## Available conversions
@@ -66,15 +68,19 @@ Env::$options ^= Env::CONVERT_NULL;
 By default, if the value does not exist, returns `null`, but you can change for any other value:
 
 ```php
-\Env\Env::$default = false;
+use Env\Env;
+
+Env::$default = false;
 ```
 
 ## The env() function
 
-If you don't want to complicate with classes and namespaces, you can use the `env()` function, like in Laravel or other libraries:
+You can use the `env()` function, like in Laravel or other frameworks:
 
 ```php
-var_dump(\Env\env('FOO'));
+use function Env\env;
+
+var_dump(env('FOO'));
 ```
 
 ---
