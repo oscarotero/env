@@ -5,10 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.0.0] - Unreleased
+## [2.0.0] - 2020-06-03
 ### Changed
-- This library is under the `Env` namespace instead the global.
-- The function `env` is under `Env` namespace and loaded automatically.
+- This library is under the `Env` namespace instead the global. [#7]
+- The function `env` is under `Env` namespace and loaded automatically. [#7]
 - Included PHP 7 strict typing
 
 ### Removed
@@ -43,8 +43,9 @@ First stable version
 [#3]: https://github.com/oscarotero/env/issues/3
 [#4]: https://github.com/oscarotero/env/issues/4
 [#6]: https://github.com/oscarotero/env/issues/6
+[#7]: https://github.com/oscarotero/env/issues/7
 
-[2.0.0]: https://github.com/oscarotero/env/compare/v1.2.0...HEAD
+[2.0.0]: https://github.com/oscarotero/env/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/oscarotero/env/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/oscarotero/env/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/oscarotero/env/compare/v1.0.1...v1.0.2
