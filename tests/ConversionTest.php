@@ -51,8 +51,18 @@ class ConversionTest extends TestCase
 
         $this->assertSame(456, env('FOO'));
 
-        //Switch to getenv again
+        //Switch to $_SERVER
         Env::$options ^= Env::USE_ENV_ARRAY;
+        Env::$options |= Env::USE_SERVER_ARRAY;
+
+        $this->assertNull(env('FOO'));
+
+        $_SERVER['FOO'] = 789;
+
+        $this->assertSame(789, env('FOO'));
+
+        //Switch to getenv again
+        Env::$options ^= Env::USE_SERVER_ARRAY;
 
         $this->assertSame(123, env('FOO'));
     }
@@ -71,9 +81,19 @@ class ConversionTest extends TestCase
         $_ENV['BAR'] = 456;
 
         $this->assertSame(456, Env::get('BAR'));
+
+        //Switch to $_SERVER
+        Env::$options ^= Env::USE_ENV_ARRAY;
+        Env::$options |= Env::USE_SERVER_ARRAY;
+
+        $this->assertNull(Env::get('BAR'));
+
+        $_SERVER['BAR'] = 789;
+
+        $this->assertSame(789, Env::get('BAR'));
         
         //Switch to getenv again
-        Env::$options ^= Env::USE_ENV_ARRAY;
+        Env::$options ^= Env::USE_SERVER_ARRAY;
 
         $this->assertSame(123, Env::get('BAR'));
     }
