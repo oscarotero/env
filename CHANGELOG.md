@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.1.0] - Unreleased
+## [2.1.0] - 2020-06-11
 ### Added
 - New constant `Env::USE_SERVER_ARRAY` to get the values using `$_SERVER` array instead `getenv()` [#8].
 
@@ -50,7 +50,7 @@ First stable version
 [#7]: https://github.com/oscarotero/env/issues/7
 [#8]: https://github.com/oscarotero/env/issues/8
 
-[2.1.0]: https://github.com/oscarotero/env/compare/v2.0.0...HEAD
+[2.1.0]: https://github.com/oscarotero/env/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/oscarotero/env/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/oscarotero/env/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/oscarotero/env/compare/v1.0.2...v1.1.0
