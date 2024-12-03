@@ -1,9 +1,12 @@
 # Change Log
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## [2.1.1] - Unreleased
+### Fixed
+- Support for PHP 8.4 [#12].
 
 ## [2.1.0] - 2020-06-11
 ### Added
@@ -40,7 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Fixed error on strip quotes to empty strings
 
-## 1.0.0 - 2015-12-30
+## [1.0.0] - 2015-12-30
 First stable version
 
 [#1]: https://github.com/oscarotero/env/issues/1
@@ -49,13 +52,16 @@ First stable version
 [#6]: https://github.com/oscarotero/env/issues/6
 [#7]: https://github.com/oscarotero/env/issues/7
 [#8]: https://github.com/oscarotero/env/issues/8
+[#12]: https://github.com/oscarotero/env/issues/12
 
+[2.1.1]: https://github.com/oscarotero/env/compare/v2.1.0...HEAD
 [2.1.0]: https://github.com/oscarotero/env/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/oscarotero/env/compare/v1.2.0...v2.0.0
 [1.2.0]: https://github.com/oscarotero/env/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/oscarotero/env/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/oscarotero/env/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/oscarotero/env/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/oscarotero/env/releases/tag/v1.0.0
 
 ---
 
