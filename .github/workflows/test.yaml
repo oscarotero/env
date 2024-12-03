@@ -45,6 +45,3 @@ jobs:
 
       - name: Tests
         run: composer test
-
-      - name: Tests coverage
-        run: composer coverage
