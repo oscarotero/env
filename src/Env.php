@@ -48,7 +48,7 @@ class Env
      *
      * @return mixed
      */
-    public static function convert(string $value, int $options = null)
+    public static function convert(string $value, ?int $options = null)
     {
         if ($options === null) {
             $options = self::$options;
